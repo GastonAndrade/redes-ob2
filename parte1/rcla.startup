@@ -1,0 +1,8 @@
+# --- IPs de cada interfaz ---
+
+ip addr add 192.168.27.2/30 dev eth0
+ip addr add 192.168.100.1/24 dev eth1
+
+# --- Rutas lejanas ---
+
+ip route add 0.0.0.0/0 via 	192.168.27.1 

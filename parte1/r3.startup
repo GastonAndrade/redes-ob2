@@ -1,0 +1,14 @@
+systemctl start frr
+
+# --- IPs de cada interfaz ---
+
+ip addr add  10.100.0.22/30 dev eth0
+ip addr add 10.100.0.26/30 dev eth1
+ip addr add 10.100.0.38/30 dev eth2
+ip addr add 192.168.27.1/30 dev eth3
+
+# --- Rutas lejanas ---
+
+ip route add 192.168.27.4/30 via 10.100.0.37
+ip route add 203.0.113.0/30 via 10.100.0.37
+ip route add 0.0.0.0/0 via 10.100.0.21
