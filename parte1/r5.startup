@@ -6,10 +6,17 @@ ip addr add 10.100.0.30/30 dev eth0
 ip addr add 10.100.0.37/30 dev eth1
 ip addr add 10.100.0.42/30 dev eth2
 ip addr add 10.100.0.34/30 dev eth3
-ip addr add 192.168.27.5/30 dev eth4
+ip addr add 203.0.113.1/30 dev eth4
 
 # --- Rutas lejanas ---
 
-ip route add 203.0.113.0/30 via 192.168.27.6
+ip route add 10.100.0.0/30 via 10.100.0.29
+ip route add 10.100.0.4/30 via 10.100.0.33
+ip route add 10.100.0.8/30 via 10.100.0.41
+ip route add 10.100.0.12/30 via 10.100.0.29
+ip route add 10.100.0.16/30 via 10.100.0.29
+ip route add 10.100.0.20/30 via 10.100.0.38
+ip route add 10.100.0.24/30 via 10.100.0.29
+ip route add 203.0.113.4/30 via 203.0.113.2
+ip route add 203.0.113.8/30 via 10.100.0.38
 ip route add 0.0.0.0/0 via 10.100.0.33
-ip route add 192.168.27.0/30 via 10.100.0.38

@@ -8,7 +8,14 @@ ip addr add 10.100.0.21/30 dev eth2
 
 # --- Rutas lejanas ---
 
-ip route add 192.168.27.4/30 via 10.100.0.14
-ip route add 203.0.113.0/30 via 10.100.0.14
+ip route add 10.100.0.4/30 via 10.100.0.14
+ip route add 10.100.0.8/30 via 10.100.0.14
+ip route add 10.100.0.16/30 via 10.100.0.14
+ip route add 10.100.0.24/30 via 10.100.0.14
+ip route add 10.100.0.28/30 via 10.100.0.14
+ip route add 10.100.0.32/30 via 10.100.0.14
+ip route add 10.100.0.36/30 via 10.100.0.22
+ip route add 10.100.0.40/30 via 10.100.0.14
+ip route add 203.0.113.0/29 via 10.100.0.14
+ip route add 203.0.113.8/30 via 10.100.0.22
 ip route add 0.0.0.0/0 via 10.100.0.1
-ip route add 192.168.27.0/30 via 10.100.0.22
