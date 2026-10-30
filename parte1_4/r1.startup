@@ -1,1 +1,7 @@
 systemctl start frr
+
+# --- IPs de cada interfaz ---
+
+ip addr add 10.100.0.2/30 dev eth0
+ip addr add 10.100.0.13/30 dev eth1
+ip addr add 10.100.0.21/30 dev eth2

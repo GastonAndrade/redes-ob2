@@ -1,0 +1,2 @@
+ip addr add 203.0.113.18/30 dev eth0
+ip route add default via 203.0.113.17

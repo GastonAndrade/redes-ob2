@@ -6,5 +6,8 @@ ip addr add 10.100.0.5/30 dev eth2
 
 # --- Rutas lejanas ---
 
-ip route add 203.0.113.0/29 via 10.100.0.6
-ip route add 203.0.113.8/30 via 10.100.0.2
+ip route add 203.0.113.8/30 via 10.100.0.2 metric 10   # A: principal por r1
+ip route add 203.0.113.8/30 via 10.100.0.6 metric 20   # A: respaldo por r6
+ip route add 203.0.113.0/29 via 10.100.0.6 metric 10   # B: principal por r6
+ip route add 203.0.113.0/29 via 10.100.0.2 metric 20   # B: respaldo por r1
+
