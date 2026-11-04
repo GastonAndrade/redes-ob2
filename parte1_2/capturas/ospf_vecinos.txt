@@ -1,0 +1,48 @@
+=== r1: show ip ospf neighbor
+
+Neighbor ID     Pri State           Up Time         Dead Time Address         Interface                        RXmtL RqstL DBsmL
+2.2.2.2           1 Full/DR         8m37s             30.088s 10.100.0.14     eth1:10.100.0.13                     0     0     0
+3.3.3.3           1 Full/Backup     2m30s             34.927s 10.100.0.22     eth2:10.100.0.21                     0     0     0
+
+
+=== r2: show ip ospf neighbor
+
+Neighbor ID     Pri State           Up Time         Dead Time Address         Interface                        RXmtL RqstL DBsmL
+1.1.1.1           1 Full/Backup     8m39s             37.854s 10.100.0.13     eth0:10.100.0.14                     0     0     0
+3.3.3.3           1 Full/Backup     2m32s             32.691s 10.100.0.26     eth1:10.100.0.25                     0     0     0
+4.4.4.4           1 Full/DR         8m36s             37.854s 10.100.0.18     eth2:10.100.0.17                     0     0     0
+5.5.5.5           1 Full/DR         8m36s             37.851s 10.100.0.30     eth3:10.100.0.29                     0     0     0
+
+
+=== r3: show ip ospf neighbor
+
+Neighbor ID     Pri State           Up Time         Dead Time Address         Interface                        RXmtL RqstL DBsmL
+1.1.1.1           1 Full/DR         2m34s             35.844s 10.100.0.21     eth0:10.100.0.22                     0     0     0
+2.2.2.2           1 Full/DR         2m34s             35.840s 10.100.0.25     eth1:10.100.0.26                     0     0     0
+5.5.5.5           1 Full/DR         2m39s             35.843s 10.100.0.37     eth2:10.100.0.38                     0     0     0
+
+
+=== r4: show ip ospf neighbor
+
+Neighbor ID     Pri State           Up Time         Dead Time Address         Interface                        RXmtL RqstL DBsmL
+2.2.2.2           1 Full/Backup     8m41s             32.942s 10.100.0.17     eth0:10.100.0.18                     0     0     0
+5.5.5.5           1 Full/DR         8m36s             32.942s 10.100.0.42     eth1:10.100.0.41                     0     0     0
+6.6.6.6           1 Full/DR         8m41s             32.937s 10.100.0.10     eth2:10.100.0.9                      0     0     0
+
+
+=== r5: show ip ospf neighbor
+
+Neighbor ID     Pri State           Up Time         Dead Time Address         Interface                        RXmtL RqstL DBsmL
+2.2.2.2           1 Full/Backup     8m43s             30.831s 10.100.0.29     eth0:10.100.0.30                     0     0     0
+3.3.3.3           1 Full/Backup     2m44s             35.673s 10.100.0.38     eth1:10.100.0.37                     0     0     0
+4.4.4.4           1 Full/Backup     8m38s             30.831s 10.100.0.41     eth2:10.100.0.42                     0     0     0
+6.6.6.6           1 Full/DR         8m38s             30.830s 10.100.0.33     eth3:10.100.0.34                     0     0     0
+
+
+=== r6: show ip ospf neighbor
+
+Neighbor ID     Pri State           Up Time         Dead Time Address         Interface                        RXmtL RqstL DBsmL
+4.4.4.4           1 Full/Backup     8m45s             38.834s 10.100.0.9      eth1:10.100.0.10                     0     0     0
+5.5.5.5           1 Full/Backup     8m40s             38.832s 10.100.0.34     eth2:10.100.0.33                     0     0     0
+
+

@@ -1,0 +1,90 @@
+=== r3: show ip ospf neighbor
+
+Neighbor ID     Pri State           Up Time         Dead Time Address         Interface                        RXmtL RqstL DBsmL
+1.1.1.1           1 Full/DR         22.219s           32.332s 10.100.0.21     eth0:10.100.0.22                     0     0     0
+2.2.2.2           1 Full/DR         22.219s           32.332s 10.100.0.25     eth1:10.100.0.26                     0     0     0
+5.5.5.5           1 Full/DR         27.212s           32.332s 10.100.0.37     eth2:10.100.0.38                     0     0     0
+
+
+=== r3: show ip ospf database
+
+       OSPF Router with ID (3.3.3.3)
+
+                Router Link States (Area 0.0.0.0)
+
+Link ID         ADV Router      Age  Seq#       CkSum  Link count
+1.1.1.1        1.1.1.1           25 0x80000013 0x1d7d 3
+2.2.2.2        2.2.2.2           26 0x80000018 0x1ab9 4
+3.3.3.3        3.3.3.3           24 0x80000019 0x0b57 4
+4.4.4.4        4.4.4.4          601 0x8000000b 0xdbff 3
+5.5.5.5        5.5.5.5           30 0x80000017 0xc62e 5
+6.6.6.6        6.6.6.6          601 0x80000008 0x9acd 3
+
+                Net Link States (Area 0.0.0.0)
+
+Link ID         ADV Router      Age  Seq#       CkSum
+10.100.0.10    6.6.6.6          607 0x80000001 0xd4cf
+10.100.0.14    2.2.2.2          608 0x80000001 0xf5d6
+10.100.0.18    4.4.4.4          607 0x80000001 0x189c
+10.100.0.21    1.1.1.1           25 0x80000004 0xf9c8
+10.100.0.25    2.2.2.2           26 0x80000004 0xd5e0
+10.100.0.30    5.5.5.5          605 0x80000001 0xb3ec
+10.100.0.33    6.6.6.6          601 0x80000001 0xff89
+10.100.0.37    5.5.5.5           30 0x80000005 0x672a
+10.100.0.42    5.5.5.5          600 0x80000001 0x7f0d
+
+                AS External Link States
+
+Link ID         ADV Router      Age  Seq#       CkSum  Route
+0.0.0.0        1.1.1.1          649 0x80000001 0x5afa E2 0.0.0.0/0 [0x0]
+0.0.0.0        6.6.6.6          646 0x80000001 0xfb41 E2 0.0.0.0/0 [0x0]
+203.0.113.4    5.5.5.5          645 0x80000001 0x42ea E2 203.0.113.4/30 [0x0]
+
+
+
+=== r3: show ip ospf route
+============ OSPF network routing table ============
+N    10.100.0.0/30         [15] area: 0.0.0.0
+                           via 10.100.0.21, eth0
+N    10.100.0.4/30         [16] area: 0.0.0.0
+                           via 10.100.0.37, eth2
+N    10.100.0.8/30         [11] area: 0.0.0.0
+                           via 10.100.0.25, eth1
+                           via 10.100.0.37, eth2
+N    10.100.0.12/30        [6] area: 0.0.0.0
+                           via 10.100.0.25, eth1
+N    10.100.0.16/30        [6] area: 0.0.0.0
+                           via 10.100.0.25, eth1
+N    10.100.0.20/30        [5] area: 0.0.0.0
+                           directly attached to eth0
+N    10.100.0.24/30        [1] area: 0.0.0.0
+                           directly attached to eth1
+N    10.100.0.28/30        [2] area: 0.0.0.0
+                           via 10.100.0.25, eth1
+                           via 10.100.0.37, eth2
+N    10.100.0.32/30        [6] area: 0.0.0.0
+                           via 10.100.0.37, eth2
+N    10.100.0.36/30        [1] area: 0.0.0.0
+                           directly attached to eth2
+N    10.100.0.40/30        [6] area: 0.0.0.0
+                           via 10.100.0.37, eth2
+N    203.0.113.0/30        [11] area: 0.0.0.0
+                           via 10.100.0.37, eth2
+N    203.0.113.8/30        [10] area: 0.0.0.0
+                           directly attached to eth3
+
+============ OSPF router routing table =============
+R    1.1.1.1               [5] area: 0.0.0.0, ASBR
+                           via 10.100.0.21, eth0
+R    5.5.5.5               [1] area: 0.0.0.0, ASBR
+                           via 10.100.0.37, eth2
+R    6.6.6.6               [6] area: 0.0.0.0, ASBR
+                           via 10.100.0.37, eth2
+
+============ OSPF external routing table ===========
+N E2 0.0.0.0/0             [15/10] tag: 0
+                           via 10.100.0.21, eth0
+N E2 203.0.113.4/30        [11/20] tag: 0
+                           via 10.100.0.37, eth2
+
+
