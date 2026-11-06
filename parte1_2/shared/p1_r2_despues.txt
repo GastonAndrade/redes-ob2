@@ -1,0 +1,17 @@
+default nhid 13 via 10.100.0.13 dev eth0 proto ospf metric 20 
+10.100.0.0/30 nhid 13 via 10.100.0.13 dev eth0 proto ospf metric 20 
+10.100.0.4/30 nhid 21 via 10.100.0.30 dev eth3 proto ospf metric 20 
+10.100.0.8/30 nhid 21 via 10.100.0.30 dev eth3 proto ospf metric 20 
+10.100.0.12/30 dev eth0 proto kernel scope link src 10.100.0.14 
+10.100.0.16/30 nhid 21 via 10.100.0.30 dev eth3 proto ospf metric 20 
+10.100.0.20/30 nhid 23 via 10.100.0.26 dev eth1 proto ospf metric 20 
+10.100.0.24/30 dev eth1 proto kernel scope link src 10.100.0.25 
+10.100.0.28/30 dev eth3 proto kernel scope link src 10.100.0.29 
+10.100.0.32/30 nhid 21 via 10.100.0.30 dev eth3 proto ospf metric 20 
+10.100.0.36/30 nhid 24 proto ospf metric 20 
+	nexthop via 10.100.0.30 dev eth3 weight 1 
+	nexthop via 10.100.0.26 dev eth1 weight 1 
+10.100.0.40/30 nhid 21 via 10.100.0.30 dev eth3 proto ospf metric 20 
+203.0.113.0/30 nhid 21 via 10.100.0.30 dev eth3 proto ospf metric 20 
+203.0.113.4/30 nhid 21 via 10.100.0.30 dev eth3 proto ospf metric 20 
+203.0.113.8/30 nhid 23 via 10.100.0.26 dev eth1 proto ospf metric 20 
