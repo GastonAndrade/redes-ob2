@@ -1,3 +1,9 @@
+ip link set dev eth0 down
+ip link set dev eth0 address 00:00:00:00:00:11
+ip link set dev eth0 up
+ip addr add 203.0.113.34/27 dev eth0
+ip route add default via 203.0.113.33
+
 # Servidor web HTTP (80) y HTTPS (443) con certificado autofirmado.
 # El direccionamiento debe ser configurado por el grupo.
 openssl req -x509 -nodes -newkey rsa:2048 -days 365 -subj "/CN=srv1" \
