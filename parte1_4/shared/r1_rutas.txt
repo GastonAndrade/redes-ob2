@@ -1,0 +1,15 @@
+[2026-11-06T23:25:13.424054] 10.100.0.48/30 nhid 20 proto ospf metric 20 
+	nexthop via 10.100.0.14 dev eth1 weight 1 
+	nexthop via 10.100.0.22 dev eth2 weight 1 
+[2026-11-06T23:25:13.473604] 10.100.0.56/30 nhid 20 proto ospf metric 20 
+	nexthop via 10.100.0.14 dev eth1 weight 1 
+	nexthop via 10.100.0.22 dev eth2 weight 1 
+[2026-11-06T23:25:14.635959] 10.100.0.44/30 nhid 20 proto ospf metric 20 
+	nexthop via 10.100.0.14 dev eth1 weight 1 
+	nexthop via 10.100.0.22 dev eth2 weight 1 
+[2026-11-06T23:25:19.935918] 10.100.0.52/30 nhid 20 proto ospf metric 20 
+	nexthop via 10.100.0.14 dev eth1 weight 1 
+	nexthop via 10.100.0.22 dev eth2 weight 1 
+[2026-11-06T23:25:19.936023] 203.0.113.16/30 nhid 20 proto ospf metric 20 
+	nexthop via 10.100.0.14 dev eth1 weight 1 
+	nexthop via 10.100.0.22 dev eth2 weight 1 

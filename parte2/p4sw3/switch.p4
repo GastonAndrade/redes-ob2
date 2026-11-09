@@ -48,10 +48,30 @@ control MyVerifyChecksum(inout headers_t hdr, inout metadata_t meta) {
 control MyIngress(inout headers_t hdr,
                   inout metadata_t meta,
                   inout standard_metadata_t std_meta) {
-    // TODO: completar por el grupo.
+    
+    counter(512, CounterType.packets) pkts_in;
+
+    action send_to(bit<9> port) {
+        std_meta.egress_spec = port;
+    }
+
+    action distribute() {
+        std_meta.mcast_grp = 123;
+    }
+
+    action drop() {
+        mark_to_drop(std_meta);
+    }
+
+    table send_frame {
+        key = { hdr.ethernet.dstAddr: exact; }
+        actions = {send_to; drop; distribute;}
+        default_action = drop();
+    }
 
     apply {
-        // TODO: completar por el grupo.
+        pkts_in.count((bit<32>) std_meta.ingress_port);
+        send_frame.apply();
     }
 }
 
@@ -61,8 +81,13 @@ control MyIngress(inout headers_t hdr,
 control MyEgress(inout headers_t hdr,
                  inout metadata_t meta,
                  inout standard_metadata_t std_meta) {
+    counter(64, CounterType.packets) pkts_out;
     apply {
-        // TODO: completar por el grupo (si corresponde).
+        if (std_meta.egress_port == std_meta.ingress_port) {
+            mark_to_drop(std_meta);
+        } else {
+           pkts_out.count((bit<32>) std_meta.egress_port); 
+        }
     }
 }
 
