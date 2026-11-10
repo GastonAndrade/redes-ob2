@@ -1,0 +1,14 @@
+table_add send_frame send_to 00:00:00:00:00:0d => 1
+table_add send_frame send_to 8 => 2
+table_add send_frame send_to 9 => 3
+table_add send_frame send_to 00:00:00:00:00:0a => 4
+mc_mgrp_create 123
+mc_node_create 0 1 2 3 4
+mc_node_associate 123 0
+table_add send_frame distribute FF:FF:FF:FF:FF:FF =>
+
+table_add acl allow 1&&&0x1ff 0&&&0 0&&&0 0&&&0 0&&&0 => 1
+table_add acl allow 0&&&0 0x0806&&&0xffff 0&&&0 0&&&0 0&&&0 => 2
+table_add acl allow 0&&&0 0x0800&&&0xffff 10.27.2.1&&&255.255.255.255 0&&&0 0&&&0 => 3
+table_add acl allow 0&&&0 0x0800&&&0xffff 203.0.113.34&&&255.255.255.255 6&&&0xff 80&&&0xffff => 4
+table_add acl allow 0&&&0 0x0800&&&0xffff 203.0.113.34&&&255.255.255.255 6&&&0xff 443&&&0xffff => 5

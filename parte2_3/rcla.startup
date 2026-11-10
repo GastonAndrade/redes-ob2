@@ -1,0 +1,17 @@
+# --- IPs de cada interfaz ---
+ip link set dev eth0 down
+ip link set dev eth1 down
+ip link set dev eth2 down
+ip link set dev eth3 down
+ip link set dev eth0 address 00:00:00:00:00:0b
+ip link set dev eth1 address 00:00:00:00:00:0c
+ip link set dev eth2 address 00:00:00:00:00:0d
+ip link set dev eth3 address 00:00:00:00:00:0e
+ip link set dev eth0 up
+ip link set dev eth1 up
+ip link set dev eth2 up
+ip link set dev eth3 up
+ip addr add 10.27.0.1/26 dev eth0
+ip addr add 10.27.0.65/26 dev eth1
+ip addr add 10.27.2.1/23 dev eth2
+ip addr add 203.0.113.33/27 dev eth3

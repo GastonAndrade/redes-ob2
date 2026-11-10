@@ -1,0 +1,8 @@
+table_add send_frame send_to 00:00:00:00:00:0c => 1
+table_add send_frame send_to 5 => 2
+table_add send_frame send_to 6 => 3
+table_add send_frame send_to 7 => 4
+mc_mgrp_create 123
+mc_node_create 0 1 2 3 4
+mc_node_associate 123 0
+table_add send_frame distribute FF:FF:FF:FF:FF:FF =>
