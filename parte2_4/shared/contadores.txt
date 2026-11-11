@@ -1,0 +1,21 @@
+--- despues de: ping gateway 10.27.2.1
+acl_cnt[0]= (828 bytes, 10 packets)
+acl_cnt[1]= (0 bytes, 0 packets)
+--- despues de: curl http srv1
+acl_cnt[0]= (13460 bytes, 34 packets)
+acl_cnt[1]= (0 bytes, 0 packets)
+--- despues de: curl https srv1
+acl_cnt[0]= (28813 bytes, 66 packets)
+acl_cnt[1]= (0 bytes, 0 packets)
+--- despues de: ping srv1
+acl_cnt[0]= (28933 bytes, 68 packets)
+acl_cnt[1]= (294 bytes, 3 packets)
+--- despues de: curl srv1:8080
+acl_cnt[0]= (28933 bytes, 68 packets)
+acl_cnt[1]= (516 bytes, 6 packets)
+--- despues de: ping pc_guest2
+acl_cnt[0]= (29053 bytes, 70 packets)
+acl_cnt[1]= (810 bytes, 9 packets)
+--- despues de: ping pc_admin1
+acl_cnt[0]= (29173 bytes, 72 packets)
+acl_cnt[1]= (1104 bytes, 12 packets)

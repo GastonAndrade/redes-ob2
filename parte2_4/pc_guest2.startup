@@ -1,0 +1,5 @@
+ip link set dev eth0 down
+ip link set dev eth0 address 00:00:00:00:00:09
+ip link set dev eth0 up
+ip addr add 10.27.2.3/23 dev eth0
+ip route add default via 10.27.2.1
