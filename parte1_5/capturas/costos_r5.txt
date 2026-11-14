@@ -1,0 +1,15 @@
+=== r5
+eth0 is up
+  Router ID 5.5.5.5, Network Type BROADCAST, Cost: 2
+eth1 is up
+  Router ID 5.5.5.5, Network Type BROADCAST, Cost: 1
+eth2 is up
+  Router ID 5.5.5.5, Network Type BROADCAST, Cost: 5
+eth3 is up
+  Router ID 5.5.5.5, Network Type BROADCAST, Cost: 5
+eth4 is up
+  Router ID 5.5.5.5, Network Type BROADCAST, Cost: 10
+eth5 is up
+  Router ID 5.5.5.5, Network Type BROADCAST, Cost: 5
+eth6 is up
+  Router ID 5.5.5.5, Network Type BROADCAST, Cost: 5

@@ -1,0 +1,17 @@
+=== r6: show ip route 10.100.0.2
+Routing entry for 10.100.0.0/30
+  Known via "ospf", distance 110, metric 20, best
+  Last update 00:01:04 ago
+  Flags: Selected 
+  Status: Installed 
+  * 10.100.0.9, via eth1, weight 1
+
+=== r6: ip route | grep 10.100.0.0/30
+10.100.0.0/30 nhid 15 via 10.100.0.9 dev eth1 proto ospf metric 20 
+10.100.0.4/30 dev eth0 proto kernel scope link src 10.100.0.6 
+10.100.0.8/30 dev eth1 proto kernel scope link src 10.100.0.10 
+=== r6: traceroute -n -s 10.100.0.6 10.100.0.2
+traceroute to 10.100.0.2 (10.100.0.2), 30 hops max, 60 byte packets
+ 1  10.100.0.9  1.193 ms
+ 2  10.100.0.17  2.538 ms
+ 3  10.100.0.2  4.929 ms
