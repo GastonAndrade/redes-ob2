@@ -1,0 +1,9 @@
+table_add send_frame send_to 00:00:00:00:00:0e => 1
+table_add send_frame send_to 00:00:00:00:00:11 => 2
+mc_mgrp_create 123
+mc_node_create 0 1 2
+mc_node_associate 123 0
+table_add send_frame distribute FF:FF:FF:FF:FF:FF =>
+
+table_add port_security src_authorized 1 00:00:00:00:00:0e => 
+table_add port_security src_authorized 2 00:00:00:00:00:11 => 
