@@ -1,0 +1,7 @@
+=== r1
+eth0 is up
+  Router ID 1.1.1.1, Network Type BROADCAST, Cost: 10
+eth1 is up
+  Router ID 1.1.1.1, Network Type BROADCAST, Cost: 5
+eth2 is up
+  Router ID 1.1.1.1, Network Type BROADCAST, Cost: 5

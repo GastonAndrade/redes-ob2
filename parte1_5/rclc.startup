@@ -1,0 +1,12 @@
+# --- IPs de cada interfaz ---
+
+ip addr add 203.0.113.14/30 dev eth0
+ip addr add 172.16.0.1/24 dev eth1
+
+# --- Rutas lejanas ---
+
+ip route add 0.0.0.0/0 via 203.0.113.13
+
+# --- LA NAT ---
+
+iptables -t nat -A POSTROUTING -s 172.16.0.0/24 -o eth0 -j SNAT --to-source 203.0.113.14

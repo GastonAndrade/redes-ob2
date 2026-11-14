@@ -7,6 +7,7 @@ Cada carpeta es un laboratorio Kathará independiente:
 |---|---|---|
 | `parte1/` | Backbone inicial de RíoNet (r1–r6), rint/pcint, Cliente A y Cliente B | 1.1, 1.2, 1.3, 1.5 |
 | `parte1_4/` | Igual a `parte1/` más los routers r7 y r8, **sin enlaces ni direccionamiento** | 1.4 |
+| `parte1_5/` | La red de la 1.4 ya resuelta (r7, r8, rclC) con los **costos OSPF de la 1.5** | 1.5 |
 | `parte2/` | LAN del Cliente A con los switches P4 | 2.1 – 2.4 |
 
 La Parte 3 (integración) se construye como un laboratorio nuevo a partir de los anteriores.
@@ -64,6 +65,33 @@ Qué viene configurado:
 Igual a `parte1/`, más `r7` y `r8` (`kathara/frr`, con ospfd habilitado y
 `frr.conf` vacío). Se declaran en `lab.conf` sin interfaces: el grupo debe
 agregar los enlaces, la nueva LAN de cliente en r8 y el direccionamiento.
+
+### Parte 1.5 – `parte1_5/`
+Es la red de la parte 1.4 (con r7, r8 y rclC) más el cambio de costos OSPF que
+fija el camino principal entre r1 y r6: **r1 – r2 – r4 – r6** (costo 10), con
+respaldo **r1 – r3 – r5 – r6** (costo 11). Lo único que cambia respecto de `parte1_4/`
+son seis líneas `ip ospf cost` (más el nombre del lab en `lab.conf`):
+
+| Enlace | Interfaces | Costo en 1.4 | Costo en 1.5 |
+|---|---|---|---|
+| r2–r4 | r2 eth2 · r4 eth0 | 5 | **1** |
+| r4–r6 | r4 eth2 · r6 eth1 | 5 | **4** |
+| r2–r5 | r2 eth3 · r5 eth0 | 1 | **2** |
+
+Con eso r1–r2–r5–r6 pasa a costar 12 y ya no empata con el respaldo (11).
+
+Para comprobarlo: `kathara lstart`, esperar las adyacencias y, en r1,
+`vtysh -c "show ip route 10.100.0.6"` (sale por eth1, métrica 20) y
+`traceroute -n -s 10.100.0.2 10.100.0.6` (pasa por 10.100.0.14 y 10.100.0.18).
+Para provocar la falla: en r2 `ip link set eth2 down`; r1 pasa a salir por eth2
+(métrica 21, vía 10.100.0.22 y 10.100.0.37). Se restaura con `ip link set eth2 up`.
+
+`capturas/` tiene las evidencias de esa prueba: `falla_r1_eth1/eth2.pcap` y
+`vuelta_r1_eth1/eth2.pcap` (tcpdump en r1), los `ping_*.txt`, `antes_/despues_/restaurado_`
+con rutas y traceroute de r1 y r6, y los costos por router. Se tomaron el 5–6/11 con
+`medir-1.5.sh` (corre dentro de la VM; los paths son los de la carpeta compartida de la VM).
+Esa corrida es anterior al cambio de numeración de la LAN C (rclC): no afecta a la 1.5
+porque el camino r1–r6 no pasa por esa zona.
 
 ---
 

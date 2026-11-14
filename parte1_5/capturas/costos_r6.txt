@@ -1,0 +1,9 @@
+=== r6
+eth0 is up
+  Router ID 6.6.6.6, Network Type BROADCAST, Cost: 10
+eth1 is up
+  Router ID 6.6.6.6, Network Type BROADCAST, Cost: 4
+eth2 is up
+  Router ID 6.6.6.6, Network Type BROADCAST, Cost: 5
+eth3 is up
+  Router ID 6.6.6.6, Network Type BROADCAST, Cost: 5
