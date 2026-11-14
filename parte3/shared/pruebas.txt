@@ -1,0 +1,103 @@
+### r1: -- bash /shared/rutas.sh
+203.0.113.0/30 nhid 19 proto ospf metric 20 
+203.0.113.8/30 nhid 20 via 10.100.0.22 dev eth2 proto ospf metric 20 
+203.0.113.12/30 nhid 19 proto ospf metric 20 
+203.0.113.32/27 nhid 20 via 10.100.0.22 dev eth2 proto ospf metric 20 
+203.0.113.128/29 nhid 19 proto ospf metric 20 
+
+### pc_admin1: -- bash /shared/png.sh 8.8.8.8
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=60 time=59.2 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=60 time=17.6 ms
+
+--- 8.8.8.8 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1001ms
+rtt min/avg/max/mdev = 17.617/38.408/59.200/20.791 ms
+
+### pc_admin1: -- bash /shared/png.sh 10.27.0.130
+PING 10.27.0.130 (10.27.0.130) 56(84) bytes of data.
+64 bytes from 10.27.0.130: icmp_seq=1 ttl=63 time=27.3 ms
+64 bytes from 10.27.0.130: icmp_seq=2 ttl=63 time=15.8 ms
+
+--- 10.27.0.130 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1002ms
+rtt min/avg/max/mdev = 15.782/21.538/27.295/5.756 ms
+
+### pc_admin1: -- bash /shared/cur.sh http://203.0.113.130
+200
+
+### pc_dev1: -- bash /shared/png.sh 8.8.8.8
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=60 time=16.4 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=60 time=16.3 ms
+
+--- 8.8.8.8 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1000ms
+rtt min/avg/max/mdev = 16.292/16.351/16.411/0.059 ms
+
+### pc_guest1: -- bash /shared/png.sh 8.8.8.8
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+2 packets transmitted, 0 received, 100% packet loss, time 1058ms
+
+
+### pc_guest1: -- bash /shared/cur.sh http://203.0.113.34
+200
+
+### pc_guest1: -- bash /shared/cur.sh https://203.0.113.34 -k
+200
+
+### pcb1: -- bash /shared/png.sh 8.8.8.8
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=60 time=12.9 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=60 time=13.5 ms
+
+--- 8.8.8.8 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1001ms
+rtt min/avg/max/mdev = 12.899/13.180/13.461/0.281 ms
+
+### pcb1: -- bash /shared/png.sh 10.27.0.3
+PING 10.27.0.3 (10.27.0.3) 56(84) bytes of data.
+64 bytes from 10.27.0.3: icmp_seq=1 ttl=64 time=4.42 ms
+64 bytes from 10.27.0.3: icmp_seq=2 ttl=64 time=2.97 ms
+
+--- 10.27.0.3 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1063ms
+rtt min/avg/max/mdev = 2.971/3.694/4.418/0.723 ms
+
+### pcb1: -- bash /shared/cur.sh http://203.0.113.130
+200
+
+### pcb1: -- bash /shared/cur.sh http://203.0.113.34
+200
+
+### pcc1: -- bash /shared/png.sh 8.8.8.8
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=59 time=17.5 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=59 time=20.1 ms
+
+--- 8.8.8.8 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1001ms
+rtt min/avg/max/mdev = 17.509/18.806/20.103/1.297 ms
+
+### pcc1: -- bash /shared/cur.sh http://203.0.113.130
+200
+
+### pcint: -- bash /shared/cur.sh http://203.0.113.130
+200
+
+### pcint: -- bash /shared/cur.sh http://203.0.113.34
+200
+
+### pcint: -- bash /shared/png.sh 10.27.0.2
+PING 10.27.0.2 (10.27.0.2) 56(84) bytes of data.
+From 8.8.8.1 icmp_seq=1 Destination Net Unreachable
+From 8.8.8.1 icmp_seq=2 Destination Net Unreachable
+
+--- 10.27.0.2 ping statistics ---
+2 packets transmitted, 0 received, +2 errors, 100% packet loss, time 1006ms
+
+
+               total        used        free      shared  buff/cache   available
+Mem:            3910        1435         850          11        1862        2475
