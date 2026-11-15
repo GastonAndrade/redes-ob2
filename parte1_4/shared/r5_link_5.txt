@@ -1,0 +1,8 @@
+[2026-11-15T00:30:08.984220] 804: eth5: <BROADCAST,MULTICAST> mtu 1500 qdisc pfifo_fast state DOWN group default 
+    link/ether 82:70:10:33:a0:40 brd ff:ff:ff:ff:ff:ff
+[2026-11-15T00:30:08.986799] 805: eth6: <BROADCAST,MULTICAST> mtu 1500 qdisc pfifo_fast state DOWN group default 
+    link/ether 3e:5a:0d:f2:cd:49 brd ff:ff:ff:ff:ff:ff
+[2026-11-15T00:32:05.086896] 804: eth5: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default 
+    link/ether 82:70:10:33:a0:40 brd ff:ff:ff:ff:ff:ff
+[2026-11-15T00:32:05.087051] 805: eth6: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default 
+    link/ether 3e:5a:0d:f2:cd:49 brd ff:ff:ff:ff:ff:ff

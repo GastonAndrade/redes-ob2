@@ -1,0 +1,30 @@
+[2026-11-15T00:30:14.004447] Deleted 10.100.0.44/30 nhid 19 proto ospf metric 20 
+	nexthop via 10.100.0.14 dev eth1 weight 1 
+	nexthop via 10.100.0.22 dev eth2 weight 1 
+[2026-11-15T00:30:14.005366] Deleted 10.100.0.48/30 nhid 19 proto ospf metric 20 
+	nexthop via 10.100.0.14 dev eth1 weight 1 
+	nexthop via 10.100.0.22 dev eth2 weight 1 
+[2026-11-15T00:30:14.005382] Deleted 10.100.0.52/30 nhid 19 proto ospf metric 20 
+	nexthop via 10.100.0.14 dev eth1 weight 1 
+	nexthop via 10.100.0.22 dev eth2 weight 1 
+[2026-11-15T00:30:14.005389] Deleted 10.100.0.56/30 nhid 19 proto ospf metric 20 
+	nexthop via 10.100.0.14 dev eth1 weight 1 
+	nexthop via 10.100.0.22 dev eth2 weight 1 
+[2026-11-15T00:30:14.005396] Deleted 203.0.113.12/30 nhid 19 proto ospf metric 20 
+	nexthop via 10.100.0.14 dev eth1 weight 1 
+	nexthop via 10.100.0.22 dev eth2 weight 1 
+[2026-11-15T00:32:05.108394] 10.100.0.44/30 nhid 19 proto ospf metric 20 
+	nexthop via 10.100.0.14 dev eth1 weight 1 
+	nexthop via 10.100.0.22 dev eth2 weight 1 
+[2026-11-15T00:32:05.108571] 10.100.0.56/30 nhid 19 proto ospf metric 20 
+	nexthop via 10.100.0.14 dev eth1 weight 1 
+	nexthop via 10.100.0.22 dev eth2 weight 1 
+[2026-11-15T00:32:10.104891] 10.100.0.48/30 nhid 19 proto ospf metric 20 
+	nexthop via 10.100.0.14 dev eth1 weight 1 
+	nexthop via 10.100.0.22 dev eth2 weight 1 
+[2026-11-15T00:32:15.850004] 10.100.0.52/30 nhid 19 proto ospf metric 20 
+	nexthop via 10.100.0.14 dev eth1 weight 1 
+	nexthop via 10.100.0.22 dev eth2 weight 1 
+[2026-11-15T00:32:15.850424] 203.0.113.12/30 nhid 19 proto ospf metric 20 
+	nexthop via 10.100.0.14 dev eth1 weight 1 
+	nexthop via 10.100.0.22 dev eth2 weight 1 
