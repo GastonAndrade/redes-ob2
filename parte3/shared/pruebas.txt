@@ -1,0 +1,80 @@
+### pc_admin1: -- bash /shared/png.sh 8.8.8.8
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=60 time=33.7 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=60 time=20.1 ms
+
+--- 8.8.8.8 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1003ms
+rtt min/avg/max/mdev = 20.077/26.894/33.711/6.817 ms
+
+### pcb1: -- bash /shared/png.sh 8.8.8.8
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=60 time=16.5 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=60 time=17.9 ms
+
+--- 8.8.8.8 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1001ms
+rtt min/avg/max/mdev = 16.529/17.226/17.924/0.697 ms
+
+### pcc1: -- bash /shared/png.sh 8.8.8.8
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=59 time=16.5 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=59 time=15.5 ms
+
+--- 8.8.8.8 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1076ms
+rtt min/avg/max/mdev = 15.502/15.985/16.469/0.483 ms
+
+### pc_admin1: -- bash /shared/cur.sh http://203.0.113.130
+200
+
+### pcb1: -- bash /shared/cur.sh http://203.0.113.34
+200
+
+### pcc1: -- bash /shared/cur.sh http://203.0.113.34
+200
+
+### pc_admin1: -- bash /shared/png.sh 10.27.0.3
+PING 10.27.0.3 (10.27.0.3) 56(84) bytes of data.
+64 bytes from 10.27.0.3: icmp_seq=1 ttl=64 time=17.2 ms
+64 bytes from 10.27.0.3: icmp_seq=2 ttl=64 time=18.6 ms
+
+--- 10.27.0.3 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1070ms
+rtt min/avg/max/mdev = 17.171/17.903/18.635/0.732 ms
+
+### pc_admin1: -- bash /shared/png.sh 10.27.0.130
+PING 10.27.0.130 (10.27.0.130) 56(84) bytes of data.
+64 bytes from 10.27.0.130: icmp_seq=1 ttl=63 time=27.3 ms
+64 bytes from 10.27.0.130: icmp_seq=2 ttl=63 time=14.3 ms
+
+--- 10.27.0.130 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1001ms
+rtt min/avg/max/mdev = 14.298/20.800/27.303/6.502 ms
+
+### pcb1: -- bash /shared/png.sh 10.27.0.3
+PING 10.27.0.3 (10.27.0.3) 56(84) bytes of data.
+64 bytes from 10.27.0.3: icmp_seq=1 ttl=64 time=2.93 ms
+64 bytes from 10.27.0.3: icmp_seq=2 ttl=64 time=5.46 ms
+
+--- 10.27.0.3 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1019ms
+rtt min/avg/max/mdev = 2.933/4.196/5.460/1.263 ms
+
+### r1: -- bash /shared/rutas.sh
+203.0.113.0/30 nhid 17 proto ospf metric 20 
+203.0.113.8/30 nhid 18 via 10.100.0.22 dev eth2 proto ospf metric 20 
+203.0.113.12/30 nhid 17 proto ospf metric 20 
+203.0.113.32/27 nhid 18 via 10.100.0.22 dev eth2 proto ospf metric 20 
+203.0.113.128/29 nhid 17 proto ospf metric 20 
+
+### pc_guest1: -- bash /shared/cur.sh http://203.0.113.34
+200
+
+### pc_guest1: -- bash /shared/png.sh 8.8.8.8
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+2 packets transmitted, 0 received, 100% packet loss, time 1026ms
+
+
