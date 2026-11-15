@@ -1,0 +1,4 @@
+[2026-11-15T00:14:00.543466] 712: eth5: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default 
+    link/ether 52:9f:08:1a:78:2f brd ff:ff:ff:ff:ff:ff
+[2026-11-15T00:14:00.546245] 713: eth6: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default 
+    link/ether fa:d1:5d:ee:e7:41 brd ff:ff:ff:ff:ff:ff
